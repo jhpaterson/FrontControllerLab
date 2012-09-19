@@ -67,6 +67,8 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Views\Home\Home.aspx" />
+    <Content Include="Views\Packages\PackageDetail.aspx" />
+    <Content Include="Views\Shared\404.aspx" />
     <Content Include="Views\Users\UserList.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -113,9 +115,11 @@
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controller\ActionCommands\CommandRegistry.cs" />
+    <Compile Include="Controller\ActionCommands\GetPackageCommand.cs" />
     <Compile Include="Controller\ActionCommands\GetUsersCommand.cs" />
     <Compile Include="Controller\ActionCommands\HomePageCommand.cs" />
     <Compile Include="Controller\ActionCommands\IActionCommand.cs" />
+    <Compile Include="Controller\ActionCommands\MissingPageCommand.cs" />
     <Compile Include="Controller\CustomHttpHandler.cs" />
     <Compile Include="Controller\FrontController.cs" />
     <Compile Include="Default.aspx.cs">
@@ -154,6 +158,20 @@
     <Compile Include="Views\Home\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Packages\PackageDetail.aspx.cs">
+      <DependentUpon>PackageDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Packages\PackageDetail.aspx.designer.cs">
+      <DependentUpon>PackageDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Users\UserList.aspx.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -162,9 +180,7 @@
       <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Shared\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />
@@ -174,6 +190,23 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GCUTours.Designer.cs</LastGenOutput>
     </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controller\ControllerClassDiagram.cd" />
+    <None Include="Diagrams\CustomHttpHandler_ProcessRequest.sequencediagram" />
+    <None Include="Diagrams\GetUsersCommand_Process.sequencediagram" />
+    <None Include="Diagrams\UserList_Page_Load.sequencediagram" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Diagrams\CustomHttpHandler_ProcessRequest.sequencediagram.layout">
+      <DependentUpon>CustomHttpHandler_ProcessRequest.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diagrams\GetUsersCommand_Process.sequencediagram.layout">
+      <DependentUpon>GetUsersCommand_Process.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diagrams\UserList_Page_Load.sequencediagram.layout">
+      <DependentUpon>UserList_Page_Load.sequencediagram</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

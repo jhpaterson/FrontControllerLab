@@ -4,7 +4,8 @@ namespace FrontControllerLab.Controller.Storage
 {
     public enum ViewStorageKeys
     {
-        Users
+        Users,
+        Packages
     }
 
     public class ViewStorage

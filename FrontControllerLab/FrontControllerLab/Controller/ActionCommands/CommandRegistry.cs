@@ -12,6 +12,8 @@ namespace FrontControllerLab.Controller.ActionCommands
         {
             _commands.Add(new HomePageCommand());
             _commands.Add(new GetUsersCommand());
+            _commands.Add(new GetPackageCommand());
+            _commands.Add(new MissingPageCommand());
         }
 
         public IActionCommand GetCommandFor(WebRequest webrequest)

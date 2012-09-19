@@ -6,7 +6,8 @@ namespace FrontControllerLab.Controller.Navigation
     {
         Home,
         Users,
-        Package
+        Package,
+        MissingPage
     }
 
     public class PageNavigator
@@ -20,6 +21,12 @@ namespace FrontControllerLab.Controller.Navigation
                     break;
                 case PageDirectory.Users:
                     HttpContext.Current.Server.Transfer("~/Views/Users/UserList.aspx");
+                    break;
+                case PageDirectory.Package:
+                    HttpContext.Current.Server.Transfer("~/Views/Packages/PackageDetail.aspx");
+                    break;
+                case PageDirectory.MissingPage:
+                    HttpContext.Current.Server.Transfer("~/Views/Shared/404.aspx");
                     break;
             }
         }
